@@ -27,16 +27,18 @@
         <input type="hidden" id="post_id" name="post_id" value={{post.id}} />
       </form>
     </div>
-
     {{! display comments }}
-    {{#if comments}}
-      {{#each comments}}
-        <div class="comment">
-          <small>{{comment_created_at}}</small>
-          <p>{{text}}</p>
-        </div>
-      {{/each}}
-    {{/if}}
+    <div class="card p-3">
+
+      {{#if comments.length}}
+        {{#each comments}}
+          <div class="comment">
+            <small>{{comment_created_at}}</small>
+            <p>{{text}}</p>
+          </div>
+        {{/each}}
+      {{/if}}
+    </div>
   </div>
   <div class="col-4">
 

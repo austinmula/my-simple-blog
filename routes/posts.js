@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const {
-    createBlogPost, updateBlogPost, getAllBlogPosts, getSingleBlogPost, deleteBlogPost, createBlogPostPage
+    createBlogPost, getEditBlogPage, getAllBlogPosts, getSingleBlogPost, deleteBlogPost, createBlogPostPage, updateBlogPost
 } = require('../controllers/posts.controller');
 
 
@@ -11,6 +11,7 @@ router.get('/', getAllBlogPosts);
 router.get('/post/:id', getSingleBlogPost);
 router.delete('/:id', deleteBlogPost);
 router.put('/:id', updateBlogPost);
+router.get('/edit/:id', getEditBlogPage);
 
 module.exports = router;
 

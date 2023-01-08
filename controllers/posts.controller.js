@@ -60,10 +60,39 @@ exports.getSingleBlogPost = (req, res) => {
 }
 
 exports.deleteBlogPost = (req, res) => {
-    res.send('something')
+    console.log(req.params)
+    try {
+        let query = "DELETE * FROM posts WHERE id = ?";
+        connection.query(query, [req.params.id], (error, response) => {
+            if (!error) {
+                res.redirect('/')
+            } else {
+                console.log(error)
+            }
+        });
+    } catch (error) {
+        res.status(500).json({ msg: "Internal Server Error" })
+    }
 }
 
 exports.updateBlogPost = (req, res) => {
     res.send('something')
 }
 
+exports.getEditBlogPage = (req, res) => {
+    // console.log(req.params)
+    try {
+        let query = "SELECT * FROM posts WHERE id = ?";
+        connection.query(query, [req.params.id], (error, response) => {
+            if (!error) {
+                res.render("editpost", {
+                    post: response[0],
+                })
+            } else {
+                console.log(error)
+            }
+        });
+    } catch (error) {
+        res.status(500).json({ msg: "Internal Server Error" })
+    }
+}
