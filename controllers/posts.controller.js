@@ -25,7 +25,10 @@ exports.getAllBlogPosts = (req, res) => {
         let query = "SELECT * FROM posts";
         connection.query(query, (error, response) => {
             if (!error) {
-                res.render("index", response)
+                res.render("index", {
+                    title: "blog posts",
+                    posts: response
+                })
             }
         });
     } catch (error) {
@@ -34,8 +37,7 @@ exports.getAllBlogPosts = (req, res) => {
 }
 
 exports.createBlogPostPage = (req, res) => {
-
-    res.send('something')
+    res.render('createpost')
 }
 
 exports.getSingleBlogPost = (req, res) => {
