@@ -1,0 +1,26 @@
+<h1>Create a new post</h1>
+
+<form method="post" action="/create">
+  <div class="mb-3">
+    <label for="blog-title" class="form-label">Blog Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="blog-title"
+      name="title"
+      placeholder="Enter blog title"
+    />
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="blog-content">Blog details</label>
+    <textarea
+      class="form-control"
+      placeholder="Enter blog details"
+      id="floatingTextarea2"
+      style="height: 400px"
+      name="description"
+    ></textarea>
+
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
