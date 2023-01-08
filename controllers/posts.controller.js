@@ -41,14 +41,16 @@ exports.createBlogPostPage = (req, res) => {
 }
 
 exports.getSingleBlogPost = (req, res) => {
-    // id = req.params.id;
+    console.log(req.params)
     try {
         let query = "SELECT * FROM posts WHERE id = ?";
         connection.query(query, [req.params.id], (error, response) => {
             if (!error) {
-                res.render("index", {
-                    post: response
+                res.render("post", {
+                    post: response[0]
                 })
+            } else {
+                console.log(error)
             }
         });
     } catch (error) {

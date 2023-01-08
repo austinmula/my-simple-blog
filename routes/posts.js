@@ -8,7 +8,7 @@ const {
 router.post('/create', createBlogPost);
 router.get('/create', createBlogPostPage);
 router.get('/', getAllBlogPosts);
-router.get('/:id/:title', getSingleBlogPost);
+router.get('/post/:id', getSingleBlogPost);
 router.delete('/:id', deleteBlogPost);
 router.put('/:id', updateBlogPost);
 
