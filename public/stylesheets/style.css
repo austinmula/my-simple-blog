@@ -10,10 +10,28 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
 }
-.blog-container .blog {
+.blog-container a {
+  text-decoration: none;
+  color: #333;
+}
+.blog-container a .blog {
   border-radius: 0.5rem;
   padding: 1.5rem 1rem;
   box-shadow: -3px -2px 9px 0px rgba(163, 153, 153, 0.68);
   -webkit-box-shadow: -3px -2px 9px 0px rgba(163, 153, 153, 0.68);
   -moz-box-shadow: -3px -2px 9px 0px rgba(163, 153, 153, 0.68);
+}
+.blog-container a .blog h5 {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.blog-container a .blog p {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }/*# sourceMappingURL=style.css.map */

@@ -41,7 +41,19 @@ exports.createBlogPostPage = (req, res) => {
 }
 
 exports.getSingleBlogPost = (req, res) => {
-    res.send('something')
+    // id = req.params.id;
+    try {
+        let query = "SELECT * FROM posts WHERE id = ?";
+        connection.query(query, [req.params.id], (error, response) => {
+            if (!error) {
+                res.render("index", {
+                    post: response
+                })
+            }
+        });
+    } catch (error) {
+        res.status(500).json({ msg: "Internal Server Error" })
+    }
 }
 
 exports.deleteBlogPost = (req, res) => {

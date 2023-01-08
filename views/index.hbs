@@ -3,8 +3,15 @@
 
 <div class="blog-container">
   {{#each posts}}
-    <div class="blog">
-      <h6> {{title}} </h6>
-    </div>
+    <a href="/:{{id}}/:{{title}}">
+      <div class="blog">
+        <h5> {{title}} </h5>
+        <p class="mt-3">
+          {{description}}
+        </p>
+      </div>
+    </a>
   {{/each}}
 </div>
+
+<script src="javascripts/script.js"></script>

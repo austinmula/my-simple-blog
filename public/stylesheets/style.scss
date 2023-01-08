@@ -9,11 +9,29 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
-  .blog {
-    border-radius: 0.5rem;
-    padding: 1.5rem 1rem;
-    box-shadow: -3px -2px 9px 0px rgba(163, 153, 153, 0.68);
-    -webkit-box-shadow: -3px -2px 9px 0px rgba(163, 153, 153, 0.68);
-    -moz-box-shadow: -3px -2px 9px 0px rgba(163, 153, 153, 0.68);
+  a {
+    text-decoration: none;
+    color: #333;
+    .blog {
+      border-radius: 0.5rem;
+      padding: 1.5rem 1rem;
+      box-shadow: -3px -2px 9px 0px rgba(163, 153, 153, 0.68);
+      -webkit-box-shadow: -3px -2px 9px 0px rgba(163, 153, 153, 0.68);
+      -moz-box-shadow: -3px -2px 9px 0px rgba(163, 153, 153, 0.68);
+      h5 {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+      p {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+    }
   }
 }
