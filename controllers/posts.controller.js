@@ -43,11 +43,12 @@ exports.createBlogPostPage = (req, res) => {
 exports.getSingleBlogPost = (req, res) => {
     console.log(req.params)
     try {
-        let query = "SELECT * FROM posts WHERE id = ?";
+        let query = "SELECT * FROM post_comments WHERE id = ?";
         connection.query(query, [req.params.id], (error, response) => {
             if (!error) {
                 res.render("post", {
-                    post: response[0]
+                    post: response[0],
+                    comments: response
                 })
             } else {
                 console.log(error)

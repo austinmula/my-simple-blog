@@ -3,11 +3,39 @@
     <div class="blog-content">
       <h1 class="my-3 display-6">{{post.title}}</h1>
       <small class="my-2"><strong>{{post.created_at}}</strong></small>
-      <div class="card my-4">
+      <div class="my-4 blog-text">
         <p class="p-4">{{post.description}} </p>
       </div>
-
     </div>
+
+    {{! comments form }}
+    <div class="comments-section">
+      <form action="/comments/create-comment" method="post">
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            placeholder="Leave a comment here"
+            id="floatingTextarea2"
+            style="height: 100px"
+            name="text"
+          ></textarea>
+          <label for="floatingTextarea2">Leave a comment</label>
+          <div class="d-flex mt-2 justify-content-end">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+        <input type="hidden" id="post_id" name="post_id" value={{post.id}} />
+      </form>
+    </div>
+
+    {{! display comments }}
+    {{#if comments}}
+      {{#each comments}}
+        <div class="comment">
+          <p>{{text}}</p>
+        </div>
+      {{/each}}
+    {{/if}}
   </div>
   <div class="col-4">
 

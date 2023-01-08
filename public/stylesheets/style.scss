@@ -15,9 +15,9 @@ body {
     .blog {
       border-radius: 0.5rem;
       padding: 1.5rem 1rem;
-      box-shadow: -3px -2px 9px 0px rgba(163, 153, 153, 0.68);
-      -webkit-box-shadow: -3px -2px 9px 0px rgba(163, 153, 153, 0.68);
-      -moz-box-shadow: -3px -2px 9px 0px rgba(163, 153, 153, 0.68);
+      box-shadow: -3px -2px 7px 0px rgba(188, 184, 184, 0.68);
+      -webkit-box-shadow: -3px -2px 7px 0px rgba(188, 184, 184, 0.68);
+      -moz-box-shadow: -3px -2px 7px 0px rgba(188, 184, 184, 0.68);
       h5 {
         display: -webkit-box;
         overflow: hidden;
@@ -34,4 +34,9 @@ body {
       }
     }
   }
+}
+
+.blog-text {
+  background-color: #f7f7f7;
+  border-radius: 5px;
 }
