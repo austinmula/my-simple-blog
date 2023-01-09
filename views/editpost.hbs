@@ -1,12 +1,12 @@
 <h1>Edit Blog Post</h1>
-
-<form method="post" action="/create">
+<form id="edit-form" method="POST" action="/edit-form?_method=PUT">
+  <input type="hidden" name="post_id" value={{post.id}} />
   <div class="mb-3">
     <label for="blog-title" class="form-label">Blog Title</label>
     <input
       type="text"
       class="form-control"
-      id="blog-title"
+      id="title"
       name="title"
       placeholder="Enter blog title"
       value="{{post.title}}"
@@ -15,14 +15,19 @@
   <div class="mb-3">
     <label class="form-label" for="blog-content">Blog details</label>
     <textarea
-      type="text"
       class="form-control"
       id="blog-content"
       rows="12"
       name="description"
+      id="description"
     >{{post.description}}</textarea>
 
   </div>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    {{! onclick="editForm()" }}
+  >Submit</button>
 </form>
+
+<script src="/javascripts/script.js"></script>

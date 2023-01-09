@@ -10,25 +10,25 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
 }
-.blog-container a {
-  text-decoration: none;
-  color: #333;
-}
-.blog-container a .blog {
+.blog-container .blog {
   border-radius: 0.5rem;
   padding: 1.5rem 1rem;
   box-shadow: -3px -2px 7px 0px rgba(188, 184, 184, 0.68);
   -webkit-box-shadow: -3px -2px 7px 0px rgba(188, 184, 184, 0.68);
   -moz-box-shadow: -3px -2px 7px 0px rgba(188, 184, 184, 0.68);
 }
-.blog-container a .blog h5 {
+.blog-container .blog a {
+  text-decoration: none;
+  color: #333;
+}
+.blog-container .blog a .blog-content h5 {
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
-.blog-container a .blog p {
+.blog-container .blog a .blog-content p {
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;

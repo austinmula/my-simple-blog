@@ -76,7 +76,21 @@ exports.deleteBlogPost = (req, res) => {
 }
 
 exports.updateBlogPost = (req, res) => {
-    res.send('something')
+    // res.send('something')
+    try {
+        let query = `UPDATE posts SET title = ?, description= ? WHERE id = ?; `;
+
+        connection.query(query, [req.body.title, req.body.description, req.body.post_id], (error, response) => {
+            if (!error) {
+                res.redirect('/')
+                console.log(response);
+            } else {
+                console.log(error)
+            }
+        });
+    } catch (error) {
+        res.status(500).json({ msg: "Internal Server Error" })
+    }
 }
 
 exports.getEditBlogPage = (req, res) => {

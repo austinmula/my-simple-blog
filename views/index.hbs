@@ -3,15 +3,29 @@
 
 <div class="blog-container mt-3">
   {{#each posts}}
-    <a href="/post/{{id}}">
-      <div class="blog">
-        <h5> {{title}} </h5>
-        <p class="mt-3">
-          {{description}}
-        </p>
-      </div>
-    </a>
-  {{/each}}
-</div>
+    <div class="blog">
+      <a href="/post/{{id}}">
+        <div class="blog-content">
+          <h5> {{title}} </h5>
+          <p class="mt-3">
+            {{description}}
+          </p>
+        </div>
+      </a>
+      <div
+        class="blog-actions d-flex justify-content-end align-items-center bg-secondary"
+      >
+        <div>
 
-<script src="javascripts/script.js"></script>
+          {{! <form class="d-flex align-items-center bg-primary"> }}
+          <button class="btn btn-danger mx-1">Delete</button>
+          {{! </form> }}
+        </div>
+        <div>
+          <a href="/edit/{{id}}" class="btn btn-secondary mx-1">Edit</a>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+
+</div>

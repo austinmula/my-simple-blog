@@ -10,7 +10,7 @@ router.get('/create', createBlogPostPage);
 router.get('/', getAllBlogPosts);
 router.get('/post/:id', getSingleBlogPost);
 router.delete('/:id', deleteBlogPost);
-router.put('/:id', updateBlogPost);
+router.put('/edit-form', updateBlogPost);
 router.get('/edit/:id', getEditBlogPage);
 
 module.exports = router;
