@@ -62,7 +62,7 @@ exports.getSingleBlogPost = (req, res) => {
 exports.deleteBlogPost = (req, res) => {
     console.log(req.params)
     try {
-        let query = "DELETE * FROM posts WHERE id = ?";
+        let query = "DELETE FROM posts WHERE id = ?";
         connection.query(query, [req.params.id], (error, response) => {
             if (!error) {
                 res.redirect('/')

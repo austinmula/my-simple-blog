@@ -12,14 +12,15 @@
           </p>
         </div>
       </a>
-      <div
-        class="blog-actions d-flex justify-content-end align-items-center bg-secondary"
-      >
-        <div>
+      <div class="blog-actions d-flex justify-content-end align-items-center">
+        <div class="d-flex align-items-center">
 
-          {{! <form class="d-flex align-items-center bg-primary"> }}
-          <button class="btn btn-danger mx-1">Delete</button>
-          {{! </form> }}
+          <form method="post" action="/{{id}}?_method=DELETE">
+            <button
+              type="submit"
+              class="btn btn-danger mx-1 mt-3"
+            >Delete</button>
+          </form>
         </div>
         <div>
           <a href="/edit/{{id}}" class="btn btn-secondary mx-1">Edit</a>
